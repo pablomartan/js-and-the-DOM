@@ -13,8 +13,8 @@ README.md
 ```
 
 ## Copyright notice
-The text is from Nietzsche's _On truth and lie in extra-moral sense_, and it is
-taken from [this site](https://pastehtml.com/view/crz4xb2u4.html), which was
+The text is from Nietzsche's _On Truth and Lie in an Extra-Moral Sense_, and it is
+taken from [this PDF](https://jpcatholic.edu/NCUpdf/Nietzsche.pdf), which was
 linked on [Wikipedia](https://en.wikipedia.org/wiki/On_Truth_and_Lies_in_a_Nonmoral_Sense).
 There is no copyright notice, but I consider this fair use, as it's for
 educational purposes.
