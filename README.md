@@ -19,3 +19,6 @@ taken from [this PDF](https://jpcatholic.edu/NCUpdf/Nietzsche.pdf), which was
 linked on [Wikipedia](https://en.wikipedia.org/wiki/On_Truth_and_Lies_in_a_Nonmoral_Sense).
 There is no copyright notice, but I consider this fair use, as it's for
 educational purposes.
+
+# License
+This code is licensed under the MIT license (see file in the repo)
