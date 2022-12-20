@@ -9,6 +9,8 @@
 */
 const sectionList = document.getElementsByTagName('section');
 const navBarUl = document.querySelector('ul');
+const mainHeader = document.querySelector('.page_header');
+const backToTopButton = document.querySelector('#back_to_top');
 
 /**
  * End Global Variables
@@ -23,8 +25,8 @@ const navBarUl = document.querySelector('ul');
 */
 const createNavItem = (sectionElement) => {
     const newLi = document.createElement('li');
-    newLi.innerHTML = `<a href="#${sectionElement.id}">${sectionElement.dataset.sectionName}</a>`
-    newLi.classList.add('nav_item', `${sectionElement.id}`);
+    newLi.innerHTML = `<a href="#${sectionElement.id}" class="${sectionElement.id}">${sectionElement.dataset.sectionName}</a>`
+    newLi.classList.add(`${sectionElement.id}`, 'nav_item');
     return newLi;
 };
 
@@ -32,10 +34,10 @@ const createNavItem = (sectionElement) => {
  * @description: checks if a given element has a class 'active'
  * @param {Element} elem: any HTMLElement
 */
-const hasActiveClass = (elem) => {
-    const classArray = Array.from(elem.classList);
-    for (let i = 0; i < classArray.length; i++) {
-        if (classArray[i] === 'active') {
+const hasActiveClass = (element) => {
+    const elementClassList = element.classList;
+    for (let i = 0; i < elementClassList.length; i++) {
+        if (elementClassList[i] === 'active') {
             return true;
         };
     }
@@ -49,10 +51,18 @@ const hasActiveClass = (elem) => {
  *
 */
 const isInViewport = (element) => {
-    const mainHeader = document.querySelector('header');
     const rect = element.getBoundingClientRect();
-    return (rect.y >= mainHeader.offsetHeight && rect.bottom <= window.innerHeight);
+    return (rect.y >= 30 && rect.bottom <= window.innerHeight);
 };
+
+/**
+ * @description: makes the header visible for 2500 milliseconds
+ *
+*/
+const unshrinkHeader = () => {
+    mainHeader.classList.remove('shrinked');
+    setTimeout(function() { mainHeader.classList.add('shrinked') }, 2500);
+}
 
 /**
  * @description: adds or removes 'active' class to an element
@@ -112,12 +122,10 @@ const setActiveClass = (sectList) => {
         // 'active', remove it from the section and the corresponding
         // nav_bar_item
         //
-        if (isInViewport(sectList[i])) {
-            if (!hasActiveClass(sectList[i])) {
-                addRemoveActive(sectList[i], 1);
-                addRemoveActive(navItem, 1);
-            }
-        } else if (!isInViewport(sectList[i]) && (hasActiveClass(sectList[i]))) {
+        if (isInViewport(sectList[i]) && !(hasActiveClass(sectList[i]))) {
+            addRemoveActive(sectList[i], 1);
+            addRemoveActive(navItem, 1);
+        } else if (!isInViewport(sectList[i]) && hasActiveClass(sectList[i])) {
             addRemoveActive(sectList[i], 0);
             addRemoveActive(navItem, 0);
         }
@@ -134,18 +142,19 @@ const scrollToId = (id) => {
     // setting the constants
     const element = document.querySelector(`#${id}`);
     const elementRect = element.getBoundingClientRect();
-    const headerHeight = document.querySelector('header').offsetHeight;
+    const headerHeight = mainHeader.offsetHeight;
     
     // srolling to the id's position
     window.scroll({
         // determine the position relative to the page scroll and the header
         // height
         
-        top: (window.scrollY + (elementRect.y - headerHeight - 20)),
+        top: (window.scrollY + (elementRect.y - 40)),
         left: 0,
         behavior: 'smooth'
     });
 };
+
 
 /**
  * End Main Functions
@@ -154,8 +163,45 @@ const scrollToId = (id) => {
 */
 
 // Build menu 
+document.addEventListener("DOMContentLoaded", function() {
+    buildNavBar(sectionList, navBarUl);
+    setActiveClass(sectionList);
+});
 
 // Scroll to section on link click
+navBarUl.addEventListener("click", function(event) {
+    event.preventDefault();
+    if (event.originalTarget.tagName !== 'UL') {
+        scrollToId(event.originalTarget.classList[0]);
+    }
+});
 
 // Set sections as active
+document.addEventListener("scroll", function() { setActiveClass(sectionList) });
 
+// "Hide" navBar when not in use...
+document.addEventListener("scroll", function() {
+    unshrinkHeader();
+});
+
+// ...and show it when needed
+mainHeader.addEventListener("mouseover", function() {
+    unshrinkHeader()
+});
+
+// if user scrolls past the bottom, show a button to return to top
+document.addEventListener("scroll", function () {
+    if (window.innerHeight + window.scrollY > document.body.offsetHeight) {
+        backToTopButton.classList.remove('hidden');
+    }
+});
+
+// Scroll to top on button click
+backToTopButton.addEventListener("click", function (event) {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+    backToTopButton.classList.add('hidden');
+});

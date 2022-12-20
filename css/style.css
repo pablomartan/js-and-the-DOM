@@ -64,7 +64,6 @@ section {
     border: 1px solid #d4bd79;
 }
 
-
 /* Active class */
 .nav_item.active {
     background-color: #172347;
@@ -76,6 +75,30 @@ section {
     height: 15px;
 }
 
+/* Bottom Buttons */
+.button_container {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    padding: 16px;
+    margin: 0 5px;
+    border: 1px solid #d4bd79;
+    background-color: #eee;
+    font-family: 'Gentium Book Basic', serif;
+}
+
+button:hover {
+    background-color: #172347;
+    color: #eee;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Queries */
 @media (min-width: 800px) {
     h2, p {
         font-size: 1.5em;
@@ -93,4 +116,3 @@ section {
         width: auto;
     }
 }
-
