@@ -8,7 +8,7 @@
  * 
 */
 const sectionList = document.getElementsByTagName('section');
-const navBarUl = document.querySelector('.nav_item_list');
+const navBarUl = document.querySelector('ul');
 
 /**
  * End Global Variables
@@ -112,10 +112,12 @@ const setActiveClass = (sectList) => {
         // 'active', remove it from the section and the corresponding
         // nav_bar_item
         //
-        if (isInViewport(sectList[i]) && !(hasActiveClass(sectList[i]))) {
-            addRemoveActive(sectList[i], 1);
-            addRemoveActive(navItem, 1);
-        } else if (hasActiveClass(sectList[i])) {
+        if (isInViewport(sectList[i])) {
+            if (!hasActiveClass(sectList[i])) {
+                addRemoveActive(sectList[i], 1);
+                addRemoveActive(navItem, 1);
+            }
+        } else if (!isInViewport(sectList[i]) && (hasActiveClass(sectList[i]))) {
             addRemoveActive(sectList[i], 0);
             addRemoveActive(navItem, 0);
         }
