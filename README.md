@@ -3,6 +3,7 @@ This is the project from the second course in the Nanodegree, using JavaScript
 (ES6) to interact with the DOM. It is an interactive landing page, with a
 navbar that dinamically adds new content, and takes you to the listed content
 when you click on it. It's file structure is as follows:
+
 ```
 css/
     - style.css
