@@ -61,7 +61,6 @@ const isInViewport = (element) => {
 */
 const unshrinkHeader = () => {
     mainHeader.classList.remove('shrinked');
-    setTimeout(function() { mainHeader.classList.add('shrinked') }, 2500);
 }
 
 /**
@@ -72,6 +71,18 @@ const unshrinkHeader = () => {
 */
 const addRemoveActive = (element, option) => {
     option ? element.classList.add('active') : element.classList.remove('active');
+};
+
+/**
+ * @description: "collapses" the sections when their title is clicked
+ * @param {HTMLElement}: the section's header
+ *
+*/
+const collapseSections = (sectHeader) => {
+    const sectContent = sectHeader.parentElement;
+    const para = sectContent.querySelector('p');
+    sectContent.parentElement.classList.toggle('collapsed');
+    para.classList.toggle('hidden');
 };
 
 /**
@@ -155,6 +166,15 @@ const scrollToId = (id) => {
     });
 };
 
+/**
+ * @description: sets hidden tag on paragraphs as to make sections collapsible
+ * @param {HTMLElement} section: the section containing the paragraphs
+ *
+*/
+const hideSections = (section) => {
+    const parag = section.querySelector('p');
+    parag.classList.toggle('hidden');
+};
 
 /**
  * End Main Functions
@@ -179,14 +199,15 @@ navBarUl.addEventListener("click", function(event) {
 // Set sections as active
 document.addEventListener("scroll", function() { setActiveClass(sectionList) });
 
-// "Hide" navBar when not in use...
+// Show nav bar while scrolling, and hide it when stopped
 document.addEventListener("scroll", function() {
     unshrinkHeader();
+    setTimeout(function() { mainHeader.classList.add('shrinked') }, 2500);
 });
 
-// ...and show it when needed
+// Show nav bar on hover
 mainHeader.addEventListener("mouseover", function() {
-    unshrinkHeader()
+    unshrinkHeader();
 });
 
 // if user scrolls past the bottom, show a button to return to top
@@ -197,11 +218,18 @@ document.addEventListener("scroll", function () {
 });
 
 // Scroll to top on button click
-backToTopButton.addEventListener("click", function (event) {
+backToTopButton.addEventListener("click", function () {
+    backToTopButton.classList.add('hidden');
     window.scroll({
         top: 0,
         left: 0,
         behavior: 'smooth'
     });
-    backToTopButton.classList.add('hidden');
+});
+
+// Make sections collapsible
+document.addEventListener("click", function(event) {
+    if (event.originalTarget.tagName === 'H2') {
+        collapseSections(event.originalTarget);
+    }
 });

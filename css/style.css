@@ -98,6 +98,9 @@ button:hover {
     display: none;
 }
 
+.collapsed {
+    min-height: auto;
+}
 /* Media Queries */
 @media (min-width: 800px) {
     h2, p {
