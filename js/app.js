@@ -183,13 +183,13 @@ const hideSections = (section) => {
 */
 
 // Build menu 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     buildNavBar(sectionList, navBarUl);
     setActiveClass(sectionList);
 });
 
 // Scroll to section on link click
-navBarUl.addEventListener("click", function(event) {
+navBarUl.addEventListener('click', function(event) {
     event.preventDefault();
     if (event.originalTarget.tagName !== 'UL') {
         scrollToId(event.originalTarget.classList[0]);
@@ -197,28 +197,28 @@ navBarUl.addEventListener("click", function(event) {
 });
 
 // Set sections as active
-document.addEventListener("scroll", function() { setActiveClass(sectionList) });
+document.addEventListener('scroll', function() { setActiveClass(sectionList) });
 
 // Show nav bar while scrolling, and hide it when stopped
-document.addEventListener("scroll", function() {
+document.addEventListener('scroll', function() {
     unshrinkHeader();
     setTimeout(function() { mainHeader.classList.add('shrinked') }, 2500);
 });
 
 // Show nav bar on hover
-mainHeader.addEventListener("mouseover", function() {
+mainHeader.addEventListener('mouseover', function() {
     unshrinkHeader();
 });
 
 // if user scrolls past the bottom, show a button to return to top
-document.addEventListener("scroll", function () {
+document.addEventListener('scroll', function () {
     if (window.innerHeight + window.scrollY > document.body.offsetHeight) {
         backToTopButton.classList.remove('hidden');
     }
 });
 
 // Scroll to top on button click
-backToTopButton.addEventListener("click", function () {
+backToTopButton.addEventListener('click', function () {
     backToTopButton.classList.add('hidden');
     window.scroll({
         top: 0,
@@ -228,7 +228,7 @@ backToTopButton.addEventListener("click", function () {
 });
 
 // Make sections collapsible
-document.addEventListener("click", function(event) {
+document.addEventListener('click', function(event) {
     if (event.originalTarget.tagName === 'H2') {
         collapseSections(event.originalTarget);
     }
