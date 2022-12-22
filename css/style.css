@@ -82,6 +82,7 @@ section {
 }
 
 button {
+    font-size: 1em;
     padding: 16px;
     margin: 0 5px;
     border: 1px solid #d4bd79;
@@ -100,6 +101,24 @@ button:hover {
 
 .collapsed {
     min-height: auto;
+}
+
+.sect_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.arrow {
+    font-size: 12pt;
+    align-self: flex-end;
+    margin: auto;
+}
+
+.inverted {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 /* Media Queries */
 @media (min-width: 800px) {

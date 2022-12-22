@@ -86,6 +86,17 @@ const collapseSections = (sectHeader) => {
 };
 
 /**
+ * @description: sets the class 'inverted' to the arrows in the headers of each
+ * section, signifying the section is collapsed or collapsible
+ * @param {HTMLElement} header: the section's header
+ *
+*/
+const invertArrow = (header) => {
+    const arrow = header.querySelector('span');
+    arrow.classList.toggle('inverted');
+};
+
+/**
  * End Helper Functions
  * Begin Main Functions
  * 
@@ -231,5 +242,6 @@ backToTopButton.addEventListener('click', function () {
 document.addEventListener('click', function(event) {
     if (event.srcElement.tagName === 'H2') {
         collapseSections(event.srcElement);
+        invertArrow(event.srcElement);
     }
 });
