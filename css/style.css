@@ -3,12 +3,19 @@
  */
 
 /* Setting base rules */ 
+html, body {
+    overscroll-behavior-y: none;
+}
+
 body {
-    margin: 0;
-    padding: 0;
+/*    margin: 0;
+      padding: 0;
+ */
     font-family: 'Gentium Book Basic', serif;
     background-color: #E8DCB8;
     color: #333;
+    width: 100vw;
+    height: 100vh;
 }
 
 a {
@@ -107,7 +114,8 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 50%;
+    width: 100%;
+    justify-self: left;
 }
 
 .arrow {
@@ -136,5 +144,9 @@ button:hover {
         margin: 0 5px 0 5px;
         padding: 15px;
         width: auto;
+    }
+
+    .sect_title {
+        min-width: 66%;
     }
 }

@@ -21,18 +21,18 @@ const backToTopButton = document.querySelector('#back_to_top');
 /**
  * @description: takes a section and creates a navigation item that links to
  * the given section
- * @param {Element} sectionElement: a <section> element
+ * @param {Element} section: the given <section>
 */
-const createNavItem = (sectionElement) => {
+const createNavItem = (section) => {
     const newLi = document.createElement('li');
-    newLi.innerHTML = `<a href="#${sectionElement.id}" class="${sectionElement.id}">${sectionElement.dataset.sectionName}</a>`
-    newLi.classList.add(`${sectionElement.id}`, 'nav_item');
+    newLi.innerHTML = `<a href="#${section.id}" class="${section.id}">${section.dataset.sectionName}</a>`
+    newLi.classList.add(`${section.id}`, 'nav_item');
     return newLi;
 };
 
 /**
  * @description: checks if a given element has a class 'active'
- * @param {Element} elem: any HTMLElement
+ * @param {HTMLElement} element: any HTMLElement
 */
 const hasActiveClass = (element) => {
     const elementClassList = element.classList;
@@ -56,7 +56,7 @@ const isInViewport = (element) => {
 };
 
 /**
- * @description: makes the header visible for 2500 milliseconds
+ * @description: makes the header visible
  *
 */
 const unshrinkHeader = () => {
@@ -74,7 +74,8 @@ const addRemoveActive = (element, option) => {
 };
 
 /**
- * @description: "collapses" the sections when their title is clicked
+ * @description: sets the class 'collapsed' to the section's content, and the
+ * content's paragraphs to make it collapse
  * @param {HTMLElement}: the section's header
  *
 */
@@ -103,9 +104,9 @@ const invertArrow = (header) => {
 */
 
 /**
- * @description: creates a nav_bar from a list of the sections in the page
+ * @description: creates a navigation bar from a list of the sections in the page
  * @param {NodeList} sectList: a list with all the sections
- * @param {HTMLElement} navBar: a ul element
+ * @param {HTMLElement} navBar: a UL element
  *
 */
 const buildNavBar = (sectList, navBar) => {
@@ -155,8 +156,8 @@ const setActiveClass = (sectList) => {
 }
 
 /**
- * @description: scrolls to an element given its id, sets it in viewport (as per
- * isInViewport above) and makes it avoid colliding with the navbar
+ * @description: scrolls to an element given its id, respecting the conditions
+ * set in the function isInViewport
  * @param {String} id: the element's id
  *
 */
@@ -170,7 +171,6 @@ const scrollToId = (id) => {
     window.scroll({
         // determine the position relative to the page scroll and the header
         // height
-        
         top: (window.scrollY + (elementRect.y - 40)),
         left: 0,
         behavior: 'smooth'
@@ -178,13 +178,13 @@ const scrollToId = (id) => {
 };
 
 /**
- * @description: sets hidden tag on paragraphs as to make sections collapsible
- * @param {HTMLElement} section: the section containing the paragraphs
+ * @description: sets or unsets hidden tag on paragraphs as to make sections collapsible
+ * @param {HTMLElement} element: any element
+ * @param {Boolean} option: true hides, false unhides
  *
 */
-const hideSections = (section) => {
-    const parag = section.querySelector('p');
-    parag.classList.toggle('hidden');
+const hideUnhideElement = (element) => {
+    element.classList.toggle('hidden');
 };
 
 /**
@@ -223,14 +223,16 @@ mainHeader.addEventListener('mouseover', function() {
 
 // if user scrolls past the bottom, show a button to return to top
 document.addEventListener('scroll', function () {
-    if (window.innerHeight + window.scrollY > document.body.offsetHeight) {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         backToTopButton.classList.remove('hidden');
+    } else {
+        backToTopButton.classList.add('hidden');
     }
 });
 
 // Scroll to top on button click
 backToTopButton.addEventListener('click', function () {
-    backToTopButton.classList.add('hidden');
+    hideUnhideElement(backToTopButton);
     window.scroll({
         top: 0,
         left: 0,
