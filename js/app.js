@@ -191,8 +191,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Scroll to section on link click
 navBarUl.addEventListener('click', function(event) {
     event.preventDefault();
-    if (event.originalTarget.tagName !== 'UL') {
-        scrollToId(event.originalTarget.classList[0]);
+    if (event.srcElement.tagName !== 'UL') {
+        scrollToId(event.srcElement.classList[0]);
     }
 });
 
@@ -229,7 +229,7 @@ backToTopButton.addEventListener('click', function () {
 
 // Make sections collapsible
 document.addEventListener('click', function(event) {
-    if (event.originalTarget.tagName === 'H2') {
-        collapseSections(event.originalTarget);
+    if (event.srcElement.tagName === 'H2') {
+        collapseSections(event.srcElement);
     }
 });
