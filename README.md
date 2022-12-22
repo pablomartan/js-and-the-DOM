@@ -10,9 +10,7 @@ bar. It has the following features:
   shows again when needed (hover or scrolling).
 * Back to top button: shows only when the user hits the bottom of the page, and
   scrolls to the top, hiding itself again.
-
-TODO:
-* Collapsible sections: the sections hide or unhide per user request.
+* Collapsible sections: the sections hide or unhide when their header is clicked.
 
 
 ## Copyright notice
