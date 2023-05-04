@@ -6,6 +6,7 @@
 /* Setting base rules */ 
 html, body {
     overscroll-behavior-y: none;
+    font-family: 'Gentium Book Plus', sans-serif;
 }
 
 body {
