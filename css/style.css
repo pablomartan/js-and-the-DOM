@@ -1,21 +1,13 @@
-/*
- * CSS rules for the landing page
- */
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&display=swap');
 
-/* Setting base rules */ 
 html, body {
-    /* Stop overscroll on Chrome and Webkit-based browsers */
     overscroll-behavior-y: none;
     font-family: 'Gentium Book Plus', sans-serif;
-    height: 100%;
 }
 
 body {
     background-color: #E8DCB8;
     color: #333;
-    /*width: 100vw;*/
-    /*height: 100vh;*/
 }
 
 a {
@@ -48,7 +40,6 @@ main {
 }
 
 section {
-    position: relative;
     min-height: 80vh;
 }
 
