@@ -8,9 +8,9 @@
  * 
 */
 const sectionList = document.getElementsByTagName('section');
-const navBarUl = document.querySelector('ul');
-const mainHeader = document.querySelector('.page_header');
-const backToTopButton = document.querySelector('#back_to_top');
+const navBarUl = document.getElementById('ul');
+const mainHeader = document.getElementById('nav-bar');
+const backToTopButton = document.getElementById('back-to-top');
 
 /**
  * End Global Variables
@@ -83,7 +83,7 @@ const collapseSections = (sectHeader) => {
     const sectContent = sectHeader.parentElement;
     const para = sectContent.querySelector('p');
     sectContent.parentElement.classList.toggle('collapsed');
-    para.classList.toggle('hidden');
+    //para.classList.toggle('hidden');
 };
 
 /**
@@ -242,7 +242,7 @@ backToTopButton.addEventListener('click', function () {
 
 // Make sections collapsible
 document.addEventListener('click', function(event) {
-    if (event.srcElement.tagName === 'H2') {
+    if (event.srcElement.tagName === 'section') {
         collapseSections(event.srcElement);
         invertArrow(event.srcElement);
     }
