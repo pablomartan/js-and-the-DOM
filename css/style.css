@@ -58,6 +58,11 @@ section {
 }
 
 /* Navbar */
+#nav-bar {
+    position: fixed;
+    top: 0;
+}
+
 .nav-item {
     display: block;
     width: 75%;
