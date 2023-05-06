@@ -98,6 +98,7 @@ button:hover {
 
 .collapsed {
     min-height: auto;
+    overflow: hidden;
 }
 
 .sect_title {
