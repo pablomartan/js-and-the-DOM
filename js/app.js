@@ -56,6 +56,17 @@ const buildNavBar = sections => {
 };
 
 /*
+ * Collapse sections
+ */
+const collapse = e => {
+  const section = e.target.parentElement.parentElement;
+  const parag = e.target.nextElementSibling;
+
+  section.classList.toggle('collapsed');
+  parag.classList.toggle('hidden');
+};
+
+/*
  * Show scroll back button when bottom of the page is reached
  */
 document.addEventListener('scroll', () => {
