@@ -58,7 +58,7 @@ section {
 }
 
 /* Navbar */
-.nav_item {
+.nav-item {
     display: block;
     width: 75%;
     margin: 2px;
@@ -67,7 +67,7 @@ section {
 }
 
 /* Active class */
-.nav_item.active {
+.nav-item.active {
     background-color: #172347;
     color: #eee;
 }
