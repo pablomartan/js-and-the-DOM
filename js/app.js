@@ -82,3 +82,7 @@ backToTopButton.addEventListener('click', () => window.scroll({
 }));
 
 document.addEventListener('DOMContentLoaded', buildNavBar(sectionCollection));
+
+Array.from(document.getElementsByTagName('H2')).forEach(title => {
+  title.addEventListener('click', collapse);
+});
