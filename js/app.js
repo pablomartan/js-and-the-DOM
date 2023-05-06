@@ -70,4 +70,4 @@ backToTopButton.addEventListener('click', () => window.scroll({
   behavior: 'smooth'
 }));
 
-buildNavBar(sectionCollection);
+document.addEventListener('DOMContentLoaded', buildNavBar(sectionCollection));
