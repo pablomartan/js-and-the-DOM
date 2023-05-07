@@ -30,7 +30,6 @@ section {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    grid-row-gap: 10px;
 
     position: fixed;
     top: 0;
@@ -56,4 +55,10 @@ h2 {
 }
 
 /* NAVBAR */
+.nav-item {
+    text-align: center;
+    padding: 5% 2%;
+    margin: 2%;
+    border: 1px solid black;
+}
 
