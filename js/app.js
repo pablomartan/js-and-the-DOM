@@ -7,7 +7,7 @@
  */
 
 const backToTopButton = document.getElementById('back-to-top');
-const navUl = document.getElementById('nav-item-list');
+const navBar = document.getElementById('nav-bar');
 const sectionCollection = Array.from(document.getElementsByTagName('section'));
 
 /**
@@ -31,13 +31,11 @@ sections.forEach(section => section.addEventListener('click', e => {
  * @param {HTMLElement} section: the section to link to
  */
 const createLi = section => {
-  const li = document.createElement('li');
   const a = document.createElement('a');
   a.href = `#${section.id}`;
   a.innerText = section.dataset.sectionName
-  li.appendChild(a);
-  li.classList.add('nav-item');
-  return li;
+  a.classList.add('nav-item');
+  return a;
 };
 
 /**
@@ -52,7 +50,7 @@ const buildNavBar = sections => {
     fragment.appendChild(createLi(section));
   });
 
-  navUl.appendChild(fragment);
+  navBar.appendChild(fragment);
 };
 
 /*
