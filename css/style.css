@@ -4,6 +4,9 @@
 html, body {
     overscroll-behavior-y: none;
     font-family: 'Gentium Book Plus', sans-serif;
+    --white: white;
+    --black: #264653;
+    --green: #2a9d8f;
 }
 
 a {
@@ -17,8 +20,8 @@ a {
 main {
     display: flex;
     flex-direction: column;
-    background: #264653;
-    color: white;
+    background: var(--black);
+    color: var(--white);
 }
 
 section {
@@ -36,8 +39,8 @@ section {
     top: 0;
 
     padding: 2%;
-    background: white;
-    color: #264653;
+    background: var(--white);
+    color: var(--black);
 }
 
 /*
@@ -62,8 +65,8 @@ h2 {
     text-align: center;
     padding: 5% 2%;
     margin: 2%;
-    border: 1px solid white;
-    background: #264653;
+    border: 1px solid var(--white);
+    background: var(--black);
     color: white;
 }
 
@@ -87,6 +90,6 @@ p {
 }
 
 section:nth-of-type(odd) {
-    background: #2a9d8f;
-    color: #264653;
+    background: var(--green);
+    color: var(--black);
 }
