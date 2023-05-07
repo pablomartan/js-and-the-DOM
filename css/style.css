@@ -26,6 +26,7 @@ section {
 
 #nav-item-list {
     position: fixed;
+    top: 0;
 }
 
 #nav-item-list > li{
