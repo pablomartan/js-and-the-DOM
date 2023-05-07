@@ -33,3 +33,20 @@ section {
     display: inline-block;
     width: 50%;
 }
+
+/*
+ * STYLING
+ */
+
+/* TITLES */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 8% 0;
+    margin-top: 12%;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 2% 0;
+}
