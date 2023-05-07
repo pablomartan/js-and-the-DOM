@@ -29,7 +29,7 @@ section {
     top: 0;
 }
 
-#nav-item-list > li{
+.nav-item {
     display: inline-block;
     width: 50%;
 }
