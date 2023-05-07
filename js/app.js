@@ -73,12 +73,13 @@ document.addEventListener('scroll', () => {
     : backToTopButton.classList.add('hidden');
 });
 
-let scrollToTop = 0;
-document.addEventListener('scroll', () => {
-  const dir = window.pageYOffset > scrollToTop ? 0 : 1;
-  window.pageYOffset === scrollToTop ? dir ? navBar.classList.remove('hidden') : navBar.classList.add('hidden') : null;
+let [scrollToTop, timeOut] = [0, null];
+window.addEventListener('scroll', () => {
+  navBar.classList.remove('hidden');
 
-  dir && scrollToTop === 0 && setTimeout(() => navBar.classList.add('hidden'), 1500);
+  window.clearTimeout(timeOut);
+
+  timeOut = setTimeout(() => navBar.classList.add('hidden'), 1500);
   
   scrollToTop = window.pageYOffset;
 });
