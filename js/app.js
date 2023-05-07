@@ -68,7 +68,7 @@ const collapse = e => {
  * Show scroll back button when bottom of the page is reached
  */
 document.addEventListener('scroll', () => {
-  (window.innerHeight + window.scrollY) > document.body.scrollHeight
+  (window.innerHeight + Math.round(window.scrollY)) >= document.body.scrollHeight
     ? backToTopButton.classList.remove('hidden')
     : backToTopButton.classList.add('hidden');
 });
@@ -79,7 +79,7 @@ document.addEventListener('scroll', () => {
   window.pageYOffset === scrollToTop ? dir ? navBar.classList.remove('hidden') : navBar.classList.add('hidden') : null;
 
   dir && scrollToTop === 0 && setTimeout(() => navBar.classList.add('hidden'), 1500);
-
+  
   scrollToTop = window.pageYOffset;
 });
 
