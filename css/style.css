@@ -93,3 +93,8 @@ p {
 .arrow {
     float: right;
 }
+
+/* INTERACTIVE CLASSES */
+.hidden {
+    display: none !important;
+}
