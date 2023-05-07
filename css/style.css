@@ -17,6 +17,7 @@ a {
 main {
     display: flex;
     flex-direction: column;
+    background: white;
 }
 
 section {
@@ -74,4 +75,8 @@ p {
 /* ARROWS */
 .arrow {
     float: right;
+}
+
+section:nth-of-type(odd) {
+    background: whitesmoke;
 }
