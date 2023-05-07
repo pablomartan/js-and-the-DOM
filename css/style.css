@@ -71,3 +71,8 @@ section {
 p {
     margin-top: 8%;
 }
+
+/* ARROWS */
+.arrow {
+    float: right;
+}
