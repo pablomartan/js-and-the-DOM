@@ -17,7 +17,8 @@ a {
 main {
     display: flex;
     flex-direction: column;
-    background: white;
+    background: #264653;
+    color: white;
 }
 
 section {
@@ -79,5 +80,6 @@ p {
 }
 
 section:nth-of-type(odd) {
-    background: whitesmoke;
+    background: #2a9d8f;
+    color: #264653;
 }
