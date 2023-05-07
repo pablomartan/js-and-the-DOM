@@ -11,3 +11,24 @@ a {
     color: unset;
 }
 
+/*
+ * LAYOUT
+ */
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+section {
+    margin: 2% 0 2% 0;
+}
+
+#nav-item-list {
+    position: fixed;
+}
+
+#nav-item-list > li{
+    display: inline-block;
+    width: 50%;
+}
