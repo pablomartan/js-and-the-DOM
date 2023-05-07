@@ -24,14 +24,18 @@ section {
     margin: 2% 0 2% 0;
 }
 
-#nav-item-list {
+#nav-bar {
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 10px;
+
     position: fixed;
     top: 0;
-}
 
-.nav-item {
-    display: inline-block;
-    width: 50%;
+    margin-top: 2%
 }
 
 /*
@@ -50,3 +54,6 @@ h2 {
     font-size: 1.8em;
     margin: 2% 0;
 }
+
+/* NAVBAR */
+
