@@ -72,6 +72,9 @@ section {
 
 p {
     margin-top: 8%;
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.2em;
 }
 
 /* ARROWS */
