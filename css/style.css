@@ -77,6 +77,11 @@ section {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 -1px 4px rgba(0, 0, 0, 0.2);
 }
 
+section:nth-of-type(odd) {
+    background: var(--green);
+    color: var(--black);
+}
+
 p {
     margin-top: 8%;
     text-align: justify;
@@ -87,9 +92,4 @@ p {
 /* ARROWS */
 .arrow {
     float: right;
-}
-
-section:nth-of-type(odd) {
-    background: var(--green);
-    color: var(--black);
 }
