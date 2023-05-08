@@ -108,4 +108,7 @@ p {
 
   background: var(--white);
   color: var(--black);
+
+  font-family: inherit;
+  font-size: 1.2em;
 }
