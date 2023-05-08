@@ -108,6 +108,22 @@ document.onpointerup = handlePointerUp;
 document.onclick = handlePointerUp;
 document.onmousemove = handlePointerUp;
 
+const setActiveNavItem = e => {
+  sectionCollection.forEach((section, i) => {
+    const coords = section.getBoundingClientRect();
+    const topHalfInView = coords.top > 0 && coords.top <= window.innerHeight / 2;
+    const bottomHalfInView = coords.bottom <= window.innerHeight && coords.bottom >= window.innerHeight / 2;
+    const navItems = Array.from(document.getElementsByClassName('nav-item'));
+
+    section.classList.contains('collapsed') ?
+      topHalfInView && bottomHalfInView ? navItems[i].classList.add('active')
+        : navItems[i].classList.remove('active')
+      : topHalfInView || bottomHalfInView ? navItems[i].classList.add('active') : navItems[i].classList.remove('active');
+  });
+};
+
+document.addEventListener('scroll', setActiveNavItem);
+
 backToTopButton.addEventListener('click', () => window.scroll({
   top: 0,
   left: 0,
