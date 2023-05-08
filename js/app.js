@@ -31,11 +31,11 @@ sections.forEach(section => section.addEventListener('click', e => {
  * @param {HTMLElement} section: the section to link to
  */
 const createLi = section => {
-  const a = document.createElement('a');
-  a.href = `#${section.id}`;
-  a.innerText = section.dataset.sectionName
-  a.classList.add('nav-item');
-  return a;
+  const p = document.createElement('p');
+  p.innerText = section.dataset.sectionName
+  p.classList.add('nav-item');
+  p.addEventListener('click', () => scrollToSection(section.id));
+  return p;
 };
 
 /**
