@@ -97,7 +97,7 @@ window.addEventListener('scroll', () => {
 });
 
 const handlePointerUp = e => {
-  if (e.clientY <= 60) {
+  if (e.clientY <= 70) {
     navBar.classList.remove('hidden');
     window.clearTimeout(timeOut);
     timeOut = setTimeout(() => navBar.classList.add('hidden'), 1500);
