@@ -100,6 +100,7 @@ const handlePointerUp = e => {
 
 document.onpointerup = handlePointerUp;
 document.onclick = handlePointerUp;
+document.onmousemove = handlePointerUp;
 
 backToTopButton.addEventListener('click', () => window.scroll({
   top: 0,
