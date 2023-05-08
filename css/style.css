@@ -98,6 +98,10 @@ p {
     display: none !important;
 }
 
+.collapsed {
+  min-height: 0;
+}
+
 /* BACK TO TOP BUTTON */
 #back-to-top {
   position: fixed;
