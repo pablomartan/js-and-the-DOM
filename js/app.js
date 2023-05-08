@@ -86,6 +86,16 @@ window.addEventListener('scroll', () => {
   timeOut = setTimeout(() => navBar.classList.add('hidden'), 1500);
 });
 
+const handlePointerUp = e => {
+  if (e.clientY <= 60) {
+    navBar.classList.remove('hidden');
+    timeOut = setTimeout(() => navBar.classList.add('hidden'), 1500);
+  }
+};
+
+document.onpointerup = handlePointerUp;
+document.onclick = handlePointerUp;
+
 backToTopButton.addEventListener('click', () => window.scroll({
   top: 0,
   left: 0,
