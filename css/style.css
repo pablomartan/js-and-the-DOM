@@ -5,7 +5,7 @@ html, body {
     overscroll-behavior-y: none;
     font-family: 'Gentium Book Plus', sans-serif;
     --white: white;
-    --black: #264653;
+    --black: #333;
     --green: #2a9d8f;
 }
 
