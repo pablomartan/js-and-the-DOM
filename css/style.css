@@ -105,6 +105,7 @@ p {
   padding: 5% 2%;
   width: 200px;
   margin-left: calc(50% - 100px);
+  margin-bottom: 2%;
 
   background: var(--white);
   color: var(--black);
