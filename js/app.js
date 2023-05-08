@@ -77,6 +77,12 @@ document.addEventListener('scroll', () => {
     : backToTopButton.classList.add('hidden');
 });
 
+/*
+ * Show navbar when:
+ *  - user scrolls
+ *  - user clicks/taps top of the page
+ *  - user places mouse on top of the page
+ */
 let timeOut = null;
 
 window.addEventListener('scroll', () => {
