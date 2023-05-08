@@ -65,9 +65,9 @@ h2 {
     text-align: center;
     padding: 5% 2%;
     margin: 2%;
-    border: 1px solid var(--white);
-    background: var(--black);
-    color: white;
+    border: 1px solid var(--black);
+    background: var(--white);
+    color: var(--black);
 }
 
 /* PARAGRAPHS */
@@ -77,7 +77,7 @@ section {
 }
 
 section:nth-of-type(odd) {
-    background: var(--green);
+    background: var(--white);
     color: var(--black);
 }
 
