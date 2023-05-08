@@ -17,7 +17,11 @@ const sectionCollection = Array.from(document.getElementsByTagName('section'));
 const scrollToSection = sectionId => {
   const section = document.getElementById(sectionId);
   const sectionRectangle = section.getBoundingClientRect();
-  window.scrollBy(sectionRectangle.x, sectionRectangle.top);
+  window.scrollBy({
+    top: sectionRectangle.top,
+    left: 0,
+    behavior: 'smooth'
+  });
 };
 
 const sections = Array.from(document.getElementsByTagName('section'));
