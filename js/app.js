@@ -76,7 +76,10 @@ document.addEventListener('scroll', () => {
 let timeOut = null;
 
 window.addEventListener('scroll', () => {
-  navBar.classList.remove('hidden');
+  const classArray = Array.from(navBar.classList);
+  if (window.scrollY > 0 && classArray.includes('hidden')) {
+    navBar.classList.remove('hidden');
+  }
 
   window.clearTimeout(timeOut);
 
