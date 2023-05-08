@@ -61,7 +61,7 @@ const buildNavBar = sections => {
  * Collapse sections
  */
 const collapse = e => {
-  const section = e.target.parentElement.parentElement;
+  const section = e.target.parentElement;
   const parag = e.target.nextElementSibling;
 
   section.classList.toggle('collapsed');
