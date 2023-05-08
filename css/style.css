@@ -102,6 +102,11 @@ p {
   min-height: 0;
 }
 
+.active {
+  background: var(--green);
+  color: var(--white);
+}
+
 /* BACK TO TOP BUTTON */
 #back-to-top {
   position: fixed;
