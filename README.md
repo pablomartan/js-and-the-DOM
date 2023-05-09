@@ -14,7 +14,8 @@ bar. It has the following features:
 
 You can see it in action [here](https://pablomartan.es/projects/landing-page/index.html).
 Here is a screenshot:
-<img style="width: 50%" src="./screenshot.png" />
+
+<img style="width: 66%" src="./screenshot.png" />
 
 # License
 This code is licensed under the MIT license (see file in the repo)
