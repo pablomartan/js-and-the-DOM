@@ -12,7 +12,7 @@ bar. It has the following features:
   scrolls to the top, hiding itself again.
 * Collapsible sections: the sections hide or unhide when their header is clicked.
 
-You can see it in action <a href="https://pablomartan.es/projects/landing-page/index.html" target="_blank">here</a>.
+You can see it in action [here](https://pablomartan.es/projects/landing-page/index.html).
 Here is a screenshot:
 
 <img style="width: 66%" src="./screenshot.png" />
