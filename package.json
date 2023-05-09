@@ -1,0 +1,29 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "An interactive landing page",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablomartan/js-and-the-DOM.git"
+  },
+  "author": "Pablo Martínez",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/pablomartan/js-and-the-DOM/issues"
+  },
+  "homepage": "https://github.com/pablomartan/js-and-the-DOM#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.1",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.82.0",
+    "webpack-cli": "^5.1.1"
+  }
+}
