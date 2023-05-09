@@ -12,6 +12,12 @@ bar. It has the following features:
   scrolls to the top, hiding itself again.
 * Collapsible sections: the sections hide or unhide when their header is clicked.
 
+You can see it in action [here](https://pablomartan.es/projects/landing-page/index.html).
+Here is a screenshot:
+<img style="width: 50%" src="./screenshot.png" />
+
+# License
+This code is licensed under the MIT license (see file in the repo)
 
 ## Copyright notice
 The text is from Nietzsche's _On Truth and Lie in an Extra-Moral Sense_, and it is
@@ -19,6 +25,3 @@ taken from [this PDF](https://jpcatholic.edu/NCUpdf/Nietzsche.pdf), which was
 linked on [Wikipedia](https://en.wikipedia.org/wiki/On_Truth_and_Lies_in_a_Nonmoral_Sense).
 There is no copyright notice, but I consider this fair use, as it's for
 educational purposes.
-
-# License
-This code is licensed under the MIT license (see file in the repo)
